@@ -16,12 +16,17 @@ To make an Intel-compatible build on M1, provide the `--platform` flag, but bewa
     docker buildx build . --platform linux/amd64 -t diveinteractive/php82-alpine \
     && docker run -it diveinteractive/php82-alpine sh
 
+## Tagging & pushing
+
+    docker image tag diveinteractive/php82-alpine:latest diveinteractive/php82-alpine:{tagname}
+    docker push diveinteractive/php82-alpine:{tagname}
+
 ## Automatic builds
 
 The automatically build the container and have it pushed, you must:
 
-* Tag the commit you wish to build
-* Create a new release with said tag
+- Tag the commit you wish to build
+- Create a new release with said tag
 
 The Docker action will automatically build the release and push it under that tag to Docker Hub.
 
