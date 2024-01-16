@@ -17,6 +17,6 @@ RUN apk add --no-cache $PHPIZE_DEPS \
     rm -rf /tmp/pear;
 
 # Install other dependencies
-RUN apk add --no-cache git curl sqlite \
+RUN apk add --no-cache patch git curl sqlite \
 nodejs npm mariadb-client postgresql-client ncdu openssh-client; \
 npm install --global yarn;
